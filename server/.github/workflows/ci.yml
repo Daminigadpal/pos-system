@@ -1,0 +1,130 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+      redis:
+        image: redis:7.0
+        ports:
+          - 6379:6379
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: server/
+
+    - name: Install dependencies
+      working-directory: ./server
+      run: npm ci
+
+    - name: Run type checking
+      working-directory: ./server
+      run: npm run build
+
+    - name: Run tests
+      working-directory: ./server
+      run: npm run test:coverage
+      env:
+        NODE_ENV: test
+        MONGODB_URI: mongodb://localhost:27017/test-pos-system
+        REDIS_URL: redis://localhost:6379
+        JWT_SECRET: test-jwt-secret
+        JWT_REFRESH_SECRET: test-refresh-secret
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./server/coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: server/
+
+    - name: Install dependencies
+      working-directory: ./server
+      run: npm ci
+
+    - name: Run security audit
+      working-directory: ./server
+      run: npm audit --audit-level moderate
+
+  build:
+    needs: [test, security]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: server/
+
+    - name: Install dependencies
+      working-directory: ./server
+      run: npm ci
+
+    - name: Build application
+      working-directory: ./server
+      run: npm run build
+
+    - name: Build Docker image
+      working-directory: ./server
+      run: |
+        docker build -t pos-backend:${{ github.sha }} .
+        docker tag pos-backend:${{ github.sha }} pos-backend:latest
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Push Docker image
+      working-directory: ./server
+      run: |
+        docker push pos-backend:${{ github.sha }}
+        docker push pos-backend:latest
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment: production
+
+    steps:
+    - name: Deploy to production
+      run: |
+        echo "Deploying to production..."
+        # Add your deployment script here
+        # This could be SSH to server, kubectl apply, etc.
