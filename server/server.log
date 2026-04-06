@@ -1,0 +1,200 @@
+
+> server@1.0.0 dev
+> nodemon --exec ts-node src/index.ts
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/index.ts(75,16): error TS2769: No overload matches this call.
+  Overload 1 of 6, '(port: number, hostname: string, backlog: number, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+  Overload 2 of 6, '(port: number, hostname: string, callback?: ((error?: Error | undefined) => void) | undefined): Server<typeof IncomingMessage, typeof ServerResponse>', gave the following error.
+    Argument of type 'string | 3000' is not assignable to parameter of type 'number'.
+      Type 'string' is not assignable to type 'number'.
+
+    at createTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1893:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Aioss\Desktop\Pos System\pos-system\server\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2769 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

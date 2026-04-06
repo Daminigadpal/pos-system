@@ -21,3 +21,122 @@
 {"level":"info","message":"Server successfully started on port 3000","timestamp":"2026-04-06T13:54:44.934Z"}
 {"level":"info","message":"Environment: development","timestamp":"2026-04-06T13:54:44.935Z"}
 {"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T13:54:44.935Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T14:21:29.023Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T14:55:34.821Z"}
+{"level":"info","message":"Cleared existing data","timestamp":"2026-04-06T14:55:34.975Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T14:58:40.611Z"}
+{"level":"info","message":"Cleared existing data","timestamp":"2026-04-06T14:58:40.679Z"}
+{"_message":"Category validation failed","errors":{"path":{"kind":"required","message":"Path `path` is required.","name":"ValidatorError","path":"path","properties":{"message":"Path `path` is required.","path":"path","type":"required"}}},"level":"error","message":"Error seeding data: Category validation failed: path: Path `path` is required.","stack":"ValidationError: Category validation failed: path: Path `path` is required.\n    at model.validate (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\node_modules\\mongoose\\lib\\document.js:2864:36)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at async model.$__save (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\node_modules\\mongoose\\lib\\model.js:389:7)\n    at async model.save (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\node_modules\\mongoose\\lib\\model.js:663:5)\n    at async seedData (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\src\\utils\\seed.ts:92:5)","timestamp":"2026-04-06T14:58:41.952Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T14:59:17.311Z"}
+{"level":"info","message":"Cleared existing data","timestamp":"2026-04-06T14:59:17.386Z"}
+{"level":"error","message":"Error seeding data: next is not a function","stack":"TypeError: next is not a function\n    at model.<anonymous> (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\src\\models\\Inventory.ts:90:3)\n    at Kareem.execPre (C:\\Users\\Aioss\\Desktop\\Pos System\\pos-system\\server\\node_modules\\kareem\\index.js:68:39)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)","timestamp":"2026-04-06T14:59:22.128Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:00:05.702Z"}
+{"level":"info","message":"Cleared existing data","timestamp":"2026-04-06T15:00:05.809Z"}
+{"level":"info","message":"Seed data created successfully","timestamp":"2026-04-06T15:00:08.440Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:01:38.580Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:01:38.668Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:01:38.669Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:01:38.677Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:01:38.714Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:01:38.720Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:01:38.721Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:01:38.722Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:03:29.336Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:03:29.422Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:03:29.423Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:03:29.430Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:03:29.451Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:03:29.458Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:03:29.459Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:03:29.459Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:04:17.884Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:04:18.065Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:04:18.066Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:04:18.073Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:04:18.094Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:04:18.100Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:04:18.101Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:04:18.102Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:04:28.705Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:04:30.900Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:04:30.916Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:04:30.939Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:05:04.719Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:05:04.834Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:05:04.835Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:05:04.842Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:05:04.862Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:05:04.868Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:05:04.868Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:05:04.869Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:06:38.339Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:06:38.438Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:06:38.439Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:06:38.447Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:06:38.468Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:06:38.473Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:06:38.474Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:06:38.475Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:07:32.993Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:07:33.060Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:07:33.061Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:07:33.068Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:07:33.084Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:07:33.087Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:07:33.087Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:07:33.087Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T15:08:18.738Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:12:14.729Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:12:14.855Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:12:14.856Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:12:14.862Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:12:14.892Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:12:14.896Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:12:14.897Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:12:14.898Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:14:14.861Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:14:14.930Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:14:14.930Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:14:14.936Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:14:14.956Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:14:14.960Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:14:14.961Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:14:14.962Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:18:21.264Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:18:21.410Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:18:21.411Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:18:21.418Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:18:21.448Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:18:21.455Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:18:21.455Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:18:21.456Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T15:26:30.717Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T15:26:31.239Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T15:34:26.267Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T15:34:26.248Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:41:38.258Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:41:38.400Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:41:38.401Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:41:38.411Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:41:38.450Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:41:38.455Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:41:38.456Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:41:38.456Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:57:48.332Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:57:48.454Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:57:48.455Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:57:48.463Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:57:48.493Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:57:48.499Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:57:48.500Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:57:48.500Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T15:58:18.238Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T15:58:18.548Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T15:58:18.549Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T15:58:18.561Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T15:58:18.602Z"}
+{"level":"info","message":"Server successfully started on port 3001","timestamp":"2026-04-06T15:58:18.612Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T15:58:18.613Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T15:58:18.613Z"}
+{"level":"info","message":"Health check requested","timestamp":"2026-04-06T16:06:55.669Z"}
+{"level":"info","message":"Test endpoint called","timestamp":"2026-04-06T16:07:06.586Z"}

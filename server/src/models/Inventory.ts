@@ -84,10 +84,9 @@ inventorySchema.index({ productId: 1 });
 inventorySchema.index({ availableQuantity: 1 });
 inventorySchema.index({ reorderPoint: 1, availableQuantity: 1 });
 
-inventorySchema.pre('save', function(this: IInventory, next: any) {
+inventorySchema.pre('save', function(this: IInventory) {
   this.availableQuantity = Math.max(0, this.quantity - this.reservedQuantity);
   this.lastUpdated = new Date();
-  next();
 });
 
 export const Inventory = mongoose.model<IInventory>('Inventory', inventorySchema);

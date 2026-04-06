@@ -39,6 +39,17 @@ export const validateQuery = (schema: Joi.ObjectSchema) => {
   };
 };
 
+export const registerValidationSchema = Joi.object({
+  username: Joi.string().min(3).max(50).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required(),
+  role: Joi.string().valid('cashier', 'manager', 'administrator').default('cashier'),
+  storeId: Joi.string().required(),
+  firstName: Joi.string().max(50).required(),
+  lastName: Joi.string().max(50).required(),
+  phoneNumber: Joi.string().optional()
+});
+
 export const userValidationSchema = Joi.object({
   username: Joi.string().min(3).max(50).required(),
   email: Joi.string().email().required(),

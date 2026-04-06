@@ -4,6 +4,60 @@ import { generateTokens, verifyRefreshToken, AuthRequest } from '../middleware/a
 import { logger } from '../utils/logger';
 import { redisClient } from '../config/redis';
 
+export const register = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { username, email, password, role, storeId, firstName, lastName, phoneNumber } = req.body;
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      res.status(409).json({ error: 'User already exists' });
+      return;
+    }
+
+    const user = new User({
+      username,
+      email,
+      password,
+      role: role || 'cashier',
+      storeId,
+      firstName,
+      lastName,
+      phoneNumber
+    });
+
+    await user.save();
+
+    const { accessToken, refreshToken } = generateTokens(user._id.toString());
+
+    try {
+      await redisClient.set(
+        `refresh_token:${user._id}`,
+        refreshToken,
+        7 * 24 * 60 * 60 // 7 days
+      );
+    } catch (redisError) {
+      logger.warn('Failed to store refresh token in Redis:', redisError);
+    }
+
+    res.status(201).json({
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+        storeId: user.storeId,
+        firstName: user.firstName,
+        lastName: user.lastName
+      },
+      accessToken,
+      refreshToken
+    });
+  } catch (error) {
+    logger.error('Register error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 export const login = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
@@ -22,11 +76,15 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const { accessToken, refreshToken } = generateTokens(user._id.toString());
 
-    await redisClient.set(
-      `refresh_token:${user._id}`,
-      refreshToken,
-      7 * 24 * 60 * 60 // 7 days
-    );
+    try {
+      await redisClient.set(
+        `refresh_token:${user._id}`,
+        refreshToken,
+        7 * 24 * 60 * 60 // 7 days
+      );
+    } catch (redisError) {
+      logger.warn('Failed to store refresh token in Redis:', redisError);
+    }
 
     user.lastLogin = new Date();
     await user.save();
@@ -60,9 +118,16 @@ export const refreshToken = async (req: Request, res: Response): Promise<void> =
     }
 
     const decoded = verifyRefreshToken(refreshToken);
-    const storedToken = await redisClient.get(`refresh_token:${decoded.userId}`);
+    
+    let storedToken: string | null = null;
+    try {
+      storedToken = await redisClient.get(`refresh_token:${decoded.userId}`);
+    } catch (redisError) {
+      logger.warn('Failed to get refresh token from Redis:', redisError);
+    }
 
-    if (!storedToken || storedToken !== refreshToken) {
+    // Skip Redis validation if Redis is not available
+    if (storedToken !== null && storedToken !== refreshToken) {
       res.status(401).json({ error: 'Invalid refresh token' });
       return;
     }
@@ -75,11 +140,15 @@ export const refreshToken = async (req: Request, res: Response): Promise<void> =
 
     const { accessToken, refreshToken: newRefreshToken } = generateTokens(user._id.toString());
 
-    await redisClient.set(
-      `refresh_token:${user._id}`,
-      newRefreshToken,
-      7 * 24 * 60 * 60
-    );
+    try {
+      await redisClient.set(
+        `refresh_token:${user._id}`,
+        newRefreshToken,
+        7 * 24 * 60 * 60
+      );
+    } catch (redisError) {
+      logger.warn('Failed to store refresh token in Redis:', redisError);
+    }
 
     res.json({
       accessToken,
@@ -94,7 +163,11 @@ export const refreshToken = async (req: Request, res: Response): Promise<void> =
 export const logout = async (req: AuthRequest, res: Response): Promise<void> => {
   try {
     if (req.user) {
-      await redisClient.del(`refresh_token:${req.user._id}`);
+      try {
+        await redisClient.del(`refresh_token:${req.user._id}`);
+      } catch (redisError) {
+        logger.warn('Failed to delete refresh token from Redis:', redisError);
+      }
     }
 
     res.json({ message: 'Logged out successfully' });

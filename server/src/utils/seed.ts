@@ -20,6 +20,41 @@ const seedData = async () => {
 
     logger.info('Cleared existing data');
 
+    // Create users first
+    const adminUser = new User({
+      username: 'admin',
+      email: 'admin@store.com',
+      password: 'admin123',
+      role: UserRole.ADMINISTRATOR,
+      storeId: new mongoose.Types.ObjectId(), // Temporary ID, will be updated
+      firstName: 'Admin',
+      lastName: 'User'
+    });
+    await adminUser.save();
+
+    const managerUser = new User({
+      username: 'manager',
+      email: 'manager@store.com',
+      password: 'manager123',
+      role: UserRole.MANAGER,
+      storeId: new mongoose.Types.ObjectId(), // Temporary ID, will be updated
+      firstName: 'Store',
+      lastName: 'Manager'
+    });
+    await managerUser.save();
+
+    const cashierUser = new User({
+      username: 'cashier',
+      email: 'cashier@store.com',
+      password: 'cashier123',
+      role: UserRole.CASHIER,
+      storeId: new mongoose.Types.ObjectId(), // Temporary ID, will be updated
+      firstName: 'Cashier',
+      lastName: 'User'
+    });
+    await cashierUser.save();
+
+    // Now create the store with the manager ID
     const store = new Store({
       name: 'Main Store',
       code: 'STORE001',
@@ -32,6 +67,7 @@ const seedData = async () => {
       },
       phoneNumber: '+1-555-0123',
       email: 'main@store.com',
+      managerId: managerUser._id,
       taxSettings: {
         defaultTaxRate: 8.5
       },
@@ -43,59 +79,32 @@ const seedData = async () => {
     });
     await store.save();
 
-    const adminUser = new User({
-      username: 'admin',
-      email: 'admin@store.com',
-      password: 'admin123',
-      role: UserRole.ADMINISTRATOR,
-      storeId: store._id,
-      firstName: 'Admin',
-      lastName: 'User'
-    });
-    await adminUser.save();
-
-    const managerUser = new User({
-      username: 'manager',
-      email: 'manager@store.com',
-      password: 'manager123',
-      role: UserRole.MANAGER,
-      storeId: store._id,
-      firstName: 'Store',
-      lastName: 'Manager'
-    });
-    await managerUser.save();
-
-    const cashierUser = new User({
-      username: 'cashier',
-      email: 'cashier@store.com',
-      password: 'cashier123',
-      role: UserRole.CASHIER,
-      storeId: store._id,
-      firstName: 'Cashier',
-      lastName: 'User'
-    });
-    await cashierUser.save();
-
-    store.managerId = managerUser._id;
-    await store.save();
+    // Update all users with the correct store ID
+    await User.updateMany(
+      { _id: { $in: [adminUser._id, managerUser._id, cashierUser._id] } },
+      { storeId: store._id }
+    );
 
     const electronicsCategory = new Category({
       name: 'Electronics',
-      description: 'Electronic devices and accessories'
+      description: 'Electronic devices and accessories',
+      path: 'Electronics'
     });
     await electronicsCategory.save();
 
     const phonesCategory = new Category({
       name: 'Smartphones',
       description: 'Mobile phones and accessories',
-      parent: electronicsCategory._id
+      parent: electronicsCategory._id,
+      path: 'Electronics / Smartphones'
     });
     await phonesCategory.save();
 
     const laptopsCategory = new Category({
       name: 'Laptops',
       description: 'Laptop computers',
-      parent: electronicsCategory._id
+      parent: electronicsCategory._id,
+      path: 'Electronics / Laptops'
     });
     await laptopsCategory.save();
 

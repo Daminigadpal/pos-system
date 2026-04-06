@@ -15,7 +15,7 @@ import orderRoutes from './routes/orders';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -65,10 +65,14 @@ const startServer = async () => {
     await connectDatabase();
     logger.info('Database connected successfully');
     
-    await redisClient.connect();
-    logger.info('Redis connected successfully');
+    try {
+      await redisClient.connect();
+      logger.info('Redis connected successfully');
+    } catch (redisError) {
+      logger.warn('Redis connection failed, continuing without Redis:', redisError);
+    }
     
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       logger.info(`Server successfully started on port ${PORT}`);
       logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
       logger.info('Server is ready to accept connections');

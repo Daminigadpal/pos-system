@@ -47,23 +47,36 @@ class RedisClient {
   }
 
   async get(key: string): Promise<string | null> {
-    if (!this.isConnected) return null;
-    return await this.client.get(key);
+    try {
+      if (!this.isConnected) return null;
+      return await this.client.get(key);
+    } catch (error) {
+      logger.warn('Redis get error:', error);
+      return null;
+    }
   }
 
   async set(key: string, value: string, expireInSeconds?: number): Promise<void> {
-    if (!this.isConnected) return;
-    
-    if (expireInSeconds) {
-      await this.client.setEx(key, expireInSeconds, value);
-    } else {
-      await this.client.set(key, value);
+    try {
+      if (!this.isConnected) return;
+      
+      if (expireInSeconds) {
+        await this.client.setEx(key, expireInSeconds, value);
+      } else {
+        await this.client.set(key, value);
+      }
+    } catch (error) {
+      logger.warn('Redis set error:', error);
     }
   }
 
   async del(key: string): Promise<void> {
-    if (!this.isConnected) return;
-    await this.client.del(key);
+    try {
+      if (!this.isConnected) return;
+      await this.client.del(key);
+    } catch (error) {
+      logger.warn('Redis del error:', error);
+    }
   }
 
   async delPattern(pattern: string): Promise<void> {

@@ -20,7 +20,7 @@ app.get('/test', (req, res) => {
   res.json({ message: 'Simple server is working!' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ Simple server running on port ${PORT}`);
   console.log(`🌐 Test: http://localhost:${PORT}/api/health`);
   console.log(`🧪 Test: http://localhost:${PORT}/test`);
