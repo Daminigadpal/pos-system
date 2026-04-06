@@ -80,11 +80,15 @@ class RedisClient {
   }
 
   async delPattern(pattern: string): Promise<void> {
-    if (!this.isConnected) return;
-    
-    const keys = await this.client.keys(pattern);
-    if (keys.length > 0) {
-      await this.client.del(keys);
+    try {
+      if (!this.isConnected) return;
+      
+      const keys = await this.client.keys(pattern);
+      if (keys.length > 0) {
+        await this.client.del(keys);
+      }
+    } catch (error) {
+      logger.warn('Redis delPattern error:', error);
     }
   }
 

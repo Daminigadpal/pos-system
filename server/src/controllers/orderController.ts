@@ -236,7 +236,7 @@ export const getOrder = async (req: AuthRequest, res: Response): Promise<void> =
   try {
     const { id } = req.params;
 
-    const order = await Order.findById(id)
+    const order = await Order.findOne({ _id: id, storeId: req.storeId })
       .populate('customerId')
       .populate('cashierId', 'firstName lastName')
       .populate('items.productId', 'name brand variants');

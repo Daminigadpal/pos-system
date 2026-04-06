@@ -121,6 +121,11 @@ export const adjustInventory = async (req: AuthRequest, res: Response): Promise<
       return;
     }
 
+    if (!reason || typeof reason !== 'string' || reason.trim().length === 0) {
+      res.status(400).json({ error: 'Adjustment reason is required' });
+      return;
+    }
+
     await session.withTransaction(async () => {
       const inventory = await Inventory.findOne({
         storeId: req.storeId,
