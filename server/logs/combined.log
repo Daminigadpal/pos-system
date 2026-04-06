@@ -1,0 +1,23 @@
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T13:44:56.995Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T13:45:08.903Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T13:45:08.975Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2026-04-06T13:45:11.003Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T13:45:11.004Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T13:46:29.677Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T13:51:24.341Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T13:51:24.533Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T13:51:24.534Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T13:51:24.543Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T13:51:24.579Z"}
+{"level":"info","message":"Server successfully started on port 3000","timestamp":"2026-04-06T13:51:24.587Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T13:51:24.589Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T13:51:24.589Z"}
+{"level":"warn","message":"MongoDB disconnected","timestamp":"2026-04-06T13:53:59.556Z"}
+{"level":"info","message":"Starting server startup process...","timestamp":"2026-04-06T13:54:44.380Z"}
+{"level":"info","message":"Connected to MongoDB successfully","timestamp":"2026-04-06T13:54:44.810Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2026-04-06T13:54:44.812Z"}
+{"level":"info","message":"Connected to Redis","timestamp":"2026-04-06T13:54:44.838Z"}
+{"level":"info","message":"Redis connected successfully","timestamp":"2026-04-06T13:54:44.917Z"}
+{"level":"info","message":"Server successfully started on port 3000","timestamp":"2026-04-06T13:54:44.934Z"}
+{"level":"info","message":"Environment: development","timestamp":"2026-04-06T13:54:44.935Z"}
+{"level":"info","message":"Server is ready to accept connections","timestamp":"2026-04-06T13:54:44.935Z"}

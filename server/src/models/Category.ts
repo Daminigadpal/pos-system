@@ -53,7 +53,7 @@ categorySchema.index({ parent: 1, sortOrder: 1 });
 categorySchema.index({ path: 1 });
 categorySchema.index({ isActive: 1 });
 
-categorySchema.pre('save', async function(next) {
+categorySchema.pre('save', async function() {
   if (this.isNew) {
     if (this.parent) {
       const parent = await Category.findById(this.parent);
@@ -66,7 +66,6 @@ categorySchema.pre('save', async function(next) {
       this.path = this.name;
     }
   }
-  next();
 });
 
 export const Category = mongoose.model<ICategory>('Category', categorySchema);

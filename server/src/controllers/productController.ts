@@ -172,7 +172,7 @@ export const createProduct = async (req: AuthRequest, res: Response): Promise<vo
     logger.info(`Product created: ${product._id} by user ${req.user._id}`);
     
     res.status(201).json(populatedProduct);
-  } catch (error) {
+  } catch (error: any) {
     logger.error('Create product error:', error);
     
     if (error.code === 11000) {
@@ -215,7 +215,7 @@ export const updateProduct = async (req: AuthRequest, res: Response): Promise<vo
     logger.info(`Product updated: ${product._id} by user ${req.user._id}`);
 
     res.json(product);
-  } catch (error) {
+  } catch (error: any) {
     logger.error('Update product error:', error);
     
     if (error.code === 11000) {

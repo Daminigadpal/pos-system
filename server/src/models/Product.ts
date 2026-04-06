@@ -136,11 +136,10 @@ productSchema.index({ category: 1 });
 productSchema.index({ isActive: 1 });
 productSchema.index({ brand: 1 });
 
-productSchema.pre('save', function(next) {
+productSchema.pre('save', function() {
   if (this.isModified('name') || this.isModified('description') || this.isModified('tags')) {
     this.searchVector = `${this.name} ${this.description || ''} ${this.tags.join(' ')} ${this.brand || ''}`.toLowerCase();
   }
-  next();
 });
 
 export const Product = mongoose.model<IProduct>('Product', productSchema);

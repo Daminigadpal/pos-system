@@ -40,6 +40,7 @@ app.use('/api/inventory', inventoryRoutes);
 app.use('/api/orders', orderRoutes);
 
 app.get('/api/health', (req, res) => {
+  logger.info('Health check requested');
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
@@ -47,9 +48,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+app.get('/test', (req, res) => {
+  logger.info('Test endpoint called');
+  res.json({ message: 'Server is responding correctly!' });
 });
+
 
 app.use((error: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   logger.error('Unhandled error:', error);
@@ -58,12 +61,17 @@ app.use((error: any, req: express.Request, res: express.Response, next: express.
 
 const startServer = async () => {
   try {
+    logger.info('Starting server startup process...');
     await connectDatabase();
+    logger.info('Database connected successfully');
+    
     await redisClient.connect();
+    logger.info('Redis connected successfully');
     
     app.listen(PORT, () => {
-      logger.info(`Server running on port ${PORT}`);
+      logger.info(`Server successfully started on port ${PORT}`);
       logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      logger.info('Server is ready to accept connections');
     });
   } catch (error) {
     logger.error('Failed to start server:', error);
